@@ -1,0 +1,12 @@
+[run]
+omit = 
+    # ignore all test cases in tests/
+    */test*
+    */__init__.py
+    */interfaces.py
+    */server*
+    */models*
+    */generated*
+    conftest.py
+    */functions.py
+    */config.py

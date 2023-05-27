@@ -1,0 +1,39 @@
+syntax = "proto3";
+
+service UserManagenmentService {
+    rpc SignUp (SignUpRequest) returns (SignUpResponse);
+    rpc Login (LoginRequest) returns (LoginResponse);
+    rpc ValidateToken (ValidateTokenRequest) returns (ValidateTokenResponse);
+}
+
+message SignUpRequest {
+    string username = 1;
+    string email = 2;
+    string password = 3;
+}
+
+message SignUpResponse {
+    int32 code = 1;
+    string reason = 2;
+}
+
+message LoginRequest {
+    string email = 1;
+    string password = 2;
+}
+
+message LoginResponse {
+    int32 code = 1;
+    string reason = 2;
+    string token = 3;
+}
+
+message ValidateTokenRequest {
+    string token = 1;
+}
+
+message ValidateTokenResponse {
+    int32 code = 1;
+    string reason = 2;
+    string user_id = 3;
+}
